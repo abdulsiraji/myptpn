@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Aplikasi Absensi Karyawan - Simulasi</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="main-header">
+            <div class="logo-company">
+                <img src="images/logo.jpg" alt="Logo Perusahaan" class="logo">
+                <span class="company-name">my PTPN XIV</span>
+            </div>
+            <button id="menu-toggle" class="menu-burger">☰</button>
+            <ul class="menu-nav">
+                <li><a href="#absensi">Absensi</a></li>
+                <li><a href="#laporan">Laporan</a></li>
+                <li><a href="#">Pengaturan</a></li>
+            </ul>
+        </header>
+
+        <main class="main-content">
+            <div class="center-content">
+                <section class="greeting-section">
+                    <h1 class="greeting">
+                        <span class="selamat">Selamat</span>
+                        <span class="datang">Datang</span>
+                    </h1>
+                </section>
+                <section class="clock-section">
+                    <h2>Waktu Saat Ini</h2>
+                    <div id="clock-wib">Waktu WIB: <span></span></div>
+                    <div id="clock-wita">Waktu WITA: <span></span></div>
+                </section>
+            </div>
+
+            <div class="column-container">
+                <section class="column form-section" id="absensi">
+                    <h2>Formulir Absensi</h2>
+                    <form id="absensi-form">
+                        <label for="nama">Nama Karyawan:</label>
+                        <input type="text" id="nama" name="nama" placeholder="Masukkan nama" required><br><br>
+
+                        <label for="divisi">Divisi:</label>
+                        <select id="divisi" name="divisi" required>
+                            <option value="">Pilih Divisi</option>
+                            <option value="Divisi A">Divisi A</option>
+                            <option value="Divisi B">Divisi B</option>
+                            <option value="Divisi C">Divisi C</option>
+                            <option value="Divisi D">Divisi D</option>
+                        </select><br><br>
+
+                        <label for="disabilitas">Disabilitas:</label>
+                        <input type="checkbox" id="disabilitas" name="disabilitas"><br><br>
+
+                        <label for="tanggal">Tanggal:</label>
+                        <input type="date" id="tanggal" name="tanggal" value="2023-10-27" required><br><br>
+
+                        <label for="jam_masuk">Jam Masuk:</label>
+                        <input type="time" id="jam_masuk" name="jam_masuk" required><br><br>
+
+                        <label for="jam_keluar">Jam Keluar:</label>
+                        <input type="time" id="jam_keluar" name="jam_keluar" required><br><br>
+
+                        <label for="keterangan">Keterangan:</label>
+                        <textarea id="keterangan" name="keterangan" rows="4" cols="50" placeholder="Masukkan keterangan (jika ada halangan/tidak masuk)"></textarea><br><br>
+
+                        <button type="submit">Submit</button>
+                        <div id="absensi-errors"></div>
+                    </form>
+
+                    <h2>Izin Darurat</h2>
+                    <form id="izin-darurat-form">
+                        <label for="password-izin">Password:</label>
+                        <input type="password" id="password-izin" name="password-izin" required><br><br>
+                        <label for="keterangan-izin">Keterangan Izin Darurat:</label>
+                        <textarea id="keterangan-izin" name="keterangan-izin" rows="4" cols="50" placeholder="Alasan izin darurat (misal: sakit, keluarga sakit, dll.)" required></textarea><br><br>
+                        <button type="submit">Kirim Izin Darurat</button>
+                        <div id="izin-darurat-errors"></div>
+                    </form>
+                </section>
+                <section class="column summary-section" id="laporan">
+                    <h2>Laporan Kehadiran & Kinerja Karyawan</h2>
+                    <div id="absensi-summary">
+                        <table id="summary-table">
+                            <thead>
+                                <tr>
+                                    <th>Nama</th>
+                                    <th>Divisi</th>
+                                    <th>Disabilitas</th>
+                                    <th>Tanggal</th>
+                                    <th>Jam Masuk</th>
+                                    <th>Jam Keluar</th>
+                                    <th>Keterangan</th>
+                                    <th>Kehadiran</th>
+                                    <th>Kinerja</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer class="main-footer">
+            <p>Dibuat oleh Abdul Siraji &copy; 2022-2024</p>
+        </footer>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
